@@ -25,10 +25,10 @@ public class CarHealth : MonoBehaviour
             TakeDamage(20);
         }
 
-        // if (currentHealth <= 0)
-        // {
-        //     UIManager.instance.GameOver();
-        // }
+        if (currentHealth <= 0)
+        {
+            UIManager.instance.GameOver();
+        }
     }
 
     void TakeDamage(int damage)

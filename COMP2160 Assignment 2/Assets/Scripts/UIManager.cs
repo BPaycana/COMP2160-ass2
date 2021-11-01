@@ -4,39 +4,48 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // public static UIManager instance;
-    // public GameObject losePanel;
-    // public GameObject winPanel;
+    public static UIManager instance;
 
-    // private bool paused = false;
+    public GameObject losePanel;
+    public GameObject winPanel;
 
-    // private void Awake()
-    // {
-    //     instance = this;
-    // }
+    private bool paused = false;
 
-    // void Start()
-    // {
-    //     Unpause();
-    // }
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    // void Update()
-    // {
+    void Start()
+    {
+        Unpause();
+    }
+
+    void Update()
+    {
         
-    // }
+    }
 
-    // public void GameOver()
-    // {
-    //     paused = true;
-    //     losePanel.SetActive(true);
-    //     Time.timeScale = 0;
-    // }
+    public void GameOver()
+    {
+        paused = true;
+        losePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
 
-    // public void Unpause()
-    // {
-    //     paused = false;
-    //     losePanel.SetActive(false);
-    //     winPanel.SetActive(false);
-    //     Time.timeScale = 1;
-    // }
+    public void Victory()
+    {
+        paused = true;
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Unpause()
+    {
+        paused = false;
+        losePanel.SetActive(false);
+        winPanel.SetActive(false);
+        Time.timeScale = 1;
+
+    }
 }
