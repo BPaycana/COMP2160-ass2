@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        Unpause();
+        paused = false;
+        losePanel.SetActive(false);
+        winPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -42,10 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void Unpause()
     {
-        paused = false;
-        losePanel.SetActive(false);
-        winPanel.SetActive(false);
-        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }

@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 547628441326600475, guid: c9185def572540a43a2ce15e156e91d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2630430262928845904, guid: c9185def572540a43a2ce15e156e91d5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -482,6 +486,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6345763746386801646, guid: 3d491434467303d48b60a339bb82776a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345763746386801646, guid: 3d491434467303d48b60a339bb82776a, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345763746386801646, guid: 3d491434467303d48b60a339bb82776a, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345763746386801646, guid: 3d491434467303d48b60a339bb82776a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca978f675974a624692dcbe07b55c36c, type: 2}
     - target: {fileID: 6345763746742849425, guid: 3d491434467303d48b60a339bb82776a, type: 3}
       propertyPath: m_Name
       value: Track
