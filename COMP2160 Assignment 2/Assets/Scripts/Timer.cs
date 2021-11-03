@@ -11,9 +11,11 @@ public class Timer : MonoBehaviour
 
     public Text timerCount;
 
-    private TimeSpan timePlaying;
+    public Text finalTime1;
 
-    //private bool timerOn;
+    public Text finalTime2;
+
+    private TimeSpan timePlaying;
 
     private float elapsedTime;
 
@@ -26,7 +28,6 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timerCount.text = "Time: 00:00:00";
-        //timerOn = false;
     }
 
     // Update is called once per frame
@@ -36,5 +37,7 @@ public class Timer : MonoBehaviour
         timePlaying = TimeSpan.FromSeconds(elapsedTime);
         string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss':'ff");
         timerCount.text = timePlayingStr;
+        finalTime1.text = timePlayingStr;
+        finalTime2.text = timePlayingStr;
     }
 }

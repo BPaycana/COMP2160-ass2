@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class CarHealth : MonoBehaviour
 {
@@ -25,16 +26,18 @@ public class CarHealth : MonoBehaviour
             TakeDamage(20);
         }
 
-        if (currentHealth <= 0)
-        {
-            UIManager.instance.GameOver();
-        }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            UIManager.instance.GameOver();
+            AnalyticsResult analyticsResult = Analytics.CustomEvent("Game Over" + Timer.instance.timerCount.text);
+        }
     }
 }

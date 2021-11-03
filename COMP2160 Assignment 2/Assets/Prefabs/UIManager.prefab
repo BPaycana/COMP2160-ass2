@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7510385025936804729
+--- !u!1 &7191524188055861409
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7510385025936804735}
-  - component: {fileID: 7510385025936804734}
-  - component: {fileID: 7510385025936804732}
+  - component: {fileID: 7191524188055861415}
+  - component: {fileID: 7191524188055861414}
+  - component: {fileID: 7191524188055861412}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -18,42 +18,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7510385025936804735
+--- !u!4 &7191524188055861415
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7510385025936804729}
+  m_GameObject: {fileID: 7191524188055861409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 758.3717, y: 375.1958, z: -322.02002}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7510385025936804734
+--- !u!114 &7191524188055861414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7510385025936804729}
+  m_GameObject: {fileID: 7191524188055861409}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d503a9a5b2d5a7a4bbdc571ce82fe14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7510385025936804732
+  losePanel: {fileID: 0}
+  winPanel: {fileID: 0}
+--- !u!114 &7191524188055861412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7510385025936804729}
+  m_GameObject: {fileID: 7191524188055861409}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d96742c5ebba0184e90f005af5f5b0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerCount: {fileID: 0}
+  finalTime1: {fileID: 0}
+  finalTime2: {fileID: 0}

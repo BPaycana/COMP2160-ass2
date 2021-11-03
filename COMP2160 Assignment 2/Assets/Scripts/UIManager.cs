@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -19,10 +20,13 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        AnalyticsResult analyticsResult = AnalyticsEvent.GameStart();
+        Debug.Log("analyticsStart: " + analyticsResult);
         paused = false;
         losePanel.SetActive(false);
         winPanel.SetActive(false);
         Time.timeScale = 1;
+        Debug.Log (Timer.instance.timerCount.text);
     }
 
     void Update()
@@ -32,6 +36,9 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
+        AnalyticsResult analyticsResult = AnalyticsEvent.GameOver();
+        Debug.Log (Timer.instance.timerCount.text);
+        Debug.Log("analyticsGameOver: " + analyticsResult);
         paused = true;
         losePanel.SetActive(true);
         Time.timeScale = 0;
@@ -39,6 +46,9 @@ public class UIManager : MonoBehaviour
 
     public void Victory()
     {
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("Victory" + Timer.instance.timerCount.text);
+        Debug.Log (Timer.instance.timerCount.text);
+        Debug.Log("analyticsVictory: " + analyticsResult);
         paused = true;
         winPanel.SetActive(true);
         Time.timeScale = 0;
