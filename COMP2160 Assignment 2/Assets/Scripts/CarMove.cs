@@ -16,21 +16,21 @@ public class CarMove: MonoBehaviour
     void FixedUpdate()
     {
         
-          float speed = 60.0f;
+          float speed = 30.0f;
           float torque = 0.5f;
 
           if (Input.GetAxis("Vertical") > 0)
           {
                rb.AddRelativeForce(Vector3.forward * speed / 3);
               float turn = Input.GetAxis("Horizontal");
-              rb.AddTorque(transform.up * (torque) * 35 * turn);
+              rb.AddTorque(transform.up * (torque) * 10 * turn);
  
         }
           else if (Input.GetAxis("Vertical") < 0)
           {
                rb.AddRelativeForce(Vector3.forward * -speed / 3);
               float turn = Input.GetAxis("Horizontal");
-              rb.AddTorque(transform.up * (torque) * -35 * turn);
+              rb.AddTorque(transform.up * (torque) * -10 * turn);
 
         }
 
