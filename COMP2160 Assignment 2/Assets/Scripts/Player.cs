@@ -1,28 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player: MonoBehaviour
 {
+    
+    public Rigidbody rb;
+    public bool isTouching = true;
+    public float maxDistance = 5;
 
-    public CharacterController controller;
 
-    public float speed = 12f;
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
+
+    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (isTouching)
+        {
 
-        Vector3 move = transform.right * x + transform.forward * z;
+            float speed = 25.0f;
+            float torque = 0.5f;
 
-        controller.Move(move * speed * Time.deltaTime);
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                rb.AddRelativeForce(Vector3.forward * speed / 3);
+                float turn = Input.GetAxis("Horizontal");
+                rb.AddTorque(transform.up * (torque) * 10 * turn);
+
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                rb.AddRelativeForce(Vector3.forward * -speed / 3);
+                float turn = Input.GetAxis("Horizontal");
+                rb.AddTorque(transform.up * (torque) * -10 * turn);
+
+            }
+        }
+
     }
+
+    // void OnCollisionEnter(Collision other)
+    // {
+
+
+    //         isTouching = true; // they are touching AND close
+
+        
+    // }
+    // void OnCollisionExit(Collision other)
+    // {
+
+    //         isTouching = false;
+
+    // }
+
 }
