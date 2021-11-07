@@ -2,14 +2,59 @@ using UnityEngine;
 
 public class CarMove: MonoBehaviour
 {
-    public int speed = 5;
+    
+    public Rigidbody rb;
+    public bool isTouching = true;
+    public float maxDistance = 5;
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 Movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (isTouching)
+        {
 
+            float speed = 25.0f;
+            float torque = 0.5f;
 
-        this.transform.position += Movement * speed * Time.deltaTime;
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                rb.AddRelativeForce(Vector3.forward * speed / 3);
+                float turn = Input.GetAxis("Horizontal");
+                rb.AddTorque(transform.up * (torque) * 1 * turn);
+
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                rb.AddRelativeForce(Vector3.forward * -speed / 3);
+                float turn = Input.GetAxis("Horizontal");
+                rb.AddTorque(transform.up * (torque) * -1 * turn);
+
+            }
+        }
+
     }
+
+    void OnCollisionEnter(Collider other)
+    {
+
+
+            isTouching = true; // they are touching AND close
+
+        
+    }
+    void OnCollisionExit(Collider other)
+    {
+
+            isTouching = false;
+
+    }
+
 }
